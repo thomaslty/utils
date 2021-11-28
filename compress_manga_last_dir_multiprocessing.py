@@ -1,6 +1,7 @@
 import shutil
 import os
 import sys
+from multiprocessing import Pool
 
 def zipit(path):
     try:
@@ -14,7 +15,7 @@ def get_path_list(input_path):
     for root, dirs, files in os.walk(input_path):
         if not dirs:
             path_list.append(root)
-	return path_list
+    return path_list
     
 if __name__ == '__main__':
     input_path = sys.argv[1]
